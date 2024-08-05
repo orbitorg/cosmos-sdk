@@ -19,7 +19,7 @@ jobs:
           check-latest: true
       - name: Test v052 with latest main
         run: |
-          $.github/scripts/update.sh $BRANCH $SIMAPP_VERSION $OUTPUT cosmossdk.io/runtime/v2 cosmossdk.io/server/v2 cosmossdk.io/store/v2 cosmossdk.io/server/v2/stf cosmossdk.io/server/v2/appmanager cosmossdk.io/api cosmossdk.io/store cosmossdk.io/core cosmossdk.io/core/testing
+          .github/scripts/update.sh $BRANCH $SIMAPP_VERSION $OUTPUT cosmossdk.io/runtime/v2 cosmossdk.io/server/v2 cosmossdk.io/store/v2 cosmossdk.io/server/v2/stf cosmossdk.io/server/v2/appmanager cosmossdk.io/api cosmossdk.io/store cosmossdk.io/core cosmossdk.io/core/testing
           cd $OUTPUT
           go test -v ./...
         env:
@@ -28,7 +28,7 @@ jobs:
           OUTPUT: ${{ runner.temp }}/test-v052
       - name: Test v052 v2 with latest main
         run: |
-          $.github/scripts/update.sh $BRANCH $SIMAPP_VERSION $OUTPUT cosmossdk.io/runtime/v2 cosmossdk.io/server/v2 cosmossdk.io/store/v2 cosmossdk.io/server/v2/stf cosmossdk.io/server/v2/appmanager cosmossdk.io/api cosmossdk.io/store cosmossdk.io/core cosmossdk.io/core/testing
+          .github/scripts/update.sh $BRANCH $SIMAPP_VERSION $OUTPUT cosmossdk.io/runtime/v2 cosmossdk.io/server/v2 cosmossdk.io/store/v2 cosmossdk.io/server/v2/stf cosmossdk.io/server/v2/appmanager cosmossdk.io/api cosmossdk.io/store cosmossdk.io/core cosmossdk.io/core/testing
           cd $OUTPUT
           go test -v ./...
         env:

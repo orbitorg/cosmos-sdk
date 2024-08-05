@@ -19,9 +19,7 @@ jobs:
       - name: Test v052 with latest main
         run: |
           .github/scripts/update.sh $BRANCH $SIMAPP_VERSION $OUTPUT cosmossdk.io/runtime/v2 cosmossdk.io/server/v2 cosmossdk.io/store/v2 cosmossdk.io/server/v2/stf cosmossdk.io/server/v2/appmanager cosmossdk.io/api cosmossdk.io/store cosmossdk.io/core cosmossdk.io/core/testing
-          cd $OUTPUT
-          ls
-          go test -v ./...
+          cd $OUTPUT && go test -v ./...
         env:
           BRANCH: release/v0.52.x
           SIMAPP_VERSION: v1
@@ -29,8 +27,7 @@ jobs:
       - name: Test v052 v2 with latest main
         run: |
           .github/scripts/update.sh $BRANCH $SIMAPP_VERSION $OUTPUT cosmossdk.io/runtime/v2 cosmossdk.io/server/v2 cosmossdk.io/store/v2 cosmossdk.io/server/v2/stf cosmossdk.io/server/v2/appmanager cosmossdk.io/api cosmossdk.io/store cosmossdk.io/core cosmossdk.io/core/testing
-          cd $OUTPUT
-          go test -v ./...
+          cd $OUTPUT && go test -v ./...
         env:
           BRANCH: release/v0.52.x
           SIMAPP_VERSION: v2
